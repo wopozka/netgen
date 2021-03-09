@@ -1,0 +1,37 @@
+English text below.
+
+B<flagi> - węzeł na ślepym końcu drgi
+N<flagi> - węzeł
+
+flagi (opcjonalne) jedna lub więcej z:
+  E - węzeł bez wejścia
+  X - węzeł bez wyjścia
+  C - węzeł zbyt bliski innego
+  A - węzeł zawierający skorygowany (dociągnięty) punkt(y)
+  M - węzeł brzegowy mapy
+
+I - przecięcie bez węzła
+H - "dziura" w siatce routingowej
+A - wierzchołek ostrego kąta
+
+UI - nieużywany punkt maskujący przecięcia
+UB - nieużywany punkt maskujący ślepe końce
+
+--------------------------------------------------------------------------------
+
+B<flags> - node on dead end of road
+N<flags> - node
+
+flags (optional) one or more of:
+  E - node without entrance
+  X - node without exit
+  C - node too close to other
+  A - node contains aligned points
+  M - boundary node of map
+
+I - intersecion without node
+H - "hole" in routing net
+A - acute angle
+
+UI - unused intersection masking point
+UB - unused dead end masking point

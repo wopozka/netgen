@@ -1,0 +1,209 @@
+﻿Wersja 1.25
+	Rozszerzenie typów do 0x120 (w tym rutowalne od 0x100-0x120) (Ar't)
+Wersja 1.24
+	Dodano obsluge znakow zakazow i nakazow na potrzeby www.
+	Z restrykcji -S generuje zakazy.(Michal Gorski)
+Wersja 1.22bugfix
+	Szybka poprawka błędu powodującego naruszenie ochrony pamięci podczas 
+	sprwadzania integralności sieci routingu i napotkania drogi, która nie
+	ma żadnych węzłów.
+
+Wersja 1.22ts
+	Rozszerzenie komunikatu o restrykcji niedopasowanej do węzłów
+	(Tomasz R. Surmacz)
+
+Wersja 1.22
+	Zmiana domyślnego typu dla RoadSign na 0x2f. Drobne poprawki: 
+	Usunięcie pustej linii po "[SIGN]", dodanie "E," jako poprawnego 
+	prefiksu nazwy RoadSign, eliminacja nieprawidłowych linii restrykcji
+	i RoadSign z wynikowej mapy.
+
+Wersja 1.21
+	Obsługa RoadSign
+
+Wersja 1.20
+	Wskazywanie niewykorzystanych punktów maskujących.
+
+Wersja 1.19
+	Obsługa parametrów ForceClass i ForceSpeed. Alternatywny algorytm
+	korekcji klas dla łączników.
+
+Wersja 1.18
+	Konfigurowanala lista typów uznawanych za łączniki (patrz opcja "-j"
+	oraz parametr connectorTypes w pliku konfiguracyjnym).
+	Wyszukiwanie "dziur" w sieci dróg wskazanych klas. Dziury wskazywane są
+	punktami o nazwie "H" w pliku .wpt. Poszukiwanie prowadzone jest
+	poczynając od dróg klasy 4 skończywszy na klasie wskazanej w pliku 
+	konfiguracyjnym (lowestClassToCheck). Za dziurę uznawany jest koniec 
+	drogi bez kontynuacji drogą klasy tej samej lub wyższej o ile w 
+	odległosći mniejszej niż skonfigurowana (routeSearchDistance) 
+	znaleziono w siatce dróg drogę tej samej lub wyższej klasy.
+
+Wersja 1.17
+	Uporządkowanie plików źródłowych po ostatnich zmianach. 
+
+Wersja 1.16 
+	Korekcja klas dróg aby zredukować maksymalną liczbę klas dla węzła 
+	do dwóch.
+
+Wersja 1.15
+	Zmiana sposobu przetwarzania mapy. Zlikwidowane podwójne parsowanie 
+	danych wejściowych. Przechowywanie wczytanych linii w dogodnej
+	do dalszej obróbki formie. Korekcja klasy łączników (0x8,0x9,0xb,0xc)
+	według najwyższej klasy dróg które łączą. Statystyka klas.
+
+Wersja 1.14
+	Poprawiony błąd w algorytmie wykrywania przecięć (Marcin Rudowski)
+
+Wersja 1.13
+        Rozszerzona lista routowalnych typów (aktualnie 0x01 - 0x013, 
+	0x16, 0x1a, 0x1b)
+
+Wersja 1.12
+	Poprawiony błąd powodujący traktowanie grupy "ślepych" węzłów (B)
+	o najniższych numerach, jak wezłów "normalnych" (N). Konsekwencją było
+	ich usuwanie opcją -N. Błąd pojawiał się przy "sklejeniu" przynajmniej 
+	jednej pary punktów (-e) i dotyczył tylu węzłów ile punktów ubyło 
+	w wyniku sklejania. 
+	Bład, obecny od wersji 0.5, zgłosił Piotr Wawrzyniak.
+
+Wersja 1.11
+	Wprowadzona opcja -s umożliwiająca wykluczenie z listy węzłów
+	generowanej opcją -c węzłów na końcach dróg leżących dalej niż
+	wskazana odległość od dróg. Pomysł dostarczył Tomasz R. Surmacz
+
+Wersja 1.10
+	Wprowadzona możliwośc niezależnego konfigurowania zakresów typów 
+	punktów maskujących końce dróg oraz usuwanych z wynikowej mapy.
+
+Wersja 1.09
+	Poprawione maskowanie przecięć (Marcin Rudowski)
+	
+Wersja 1.08
+	Poprawki Marcina Rudowskiego dotyczące porównywania współrzędnych
+	punktów.
+	
+Wersja 1.07
+	Nowy algorytm wyznaczania przecięć zaimplementowany przez 
+	Marcina Rudowskiego
+	
+Wersja 1.06
+	Kolejne optymalizacje szybkościowe Marcina Rudowskiego
+
+Wersja 1.05
+        Wskazywanie węzłów bez wjazdu/wyjazdu. Podwójne liczenie dróg
+	przechodzących przez węzeł przy generowaniu sufiksu nazwy
+	węzła w pliku .plt. Jako efekt uboczny, ale chyba pożądany 
+	(albo bez znaczenia) - podwójne liczenie także przy dociąganiu.
+
+Wersja 1.04
+        Poprawiony błąd powodujący naruszenie ochrony pamięci przy 
+	restrykcji o zerowej liczbie punktów (np. Data1).
+
+Wersja 1.03
+	Optymalizacje pod względem szybkości (Marcin Rudowski)
+
+Wersja 1.02
+	Akceptowanie dzięsiętnego "Type" w wejściowej mapie.
+
+
+Wersja 0.17
+	Numerówka bez Label - brak numeracji na danym odcinku.
+	Refaktoryzacja kodu.
+
+Wersja 0.16
+	Poprawiony błąd skutkujący nieprawidłowym ustalaniem kolejności
+	węzłów w drodze (istotne dla numeracji)
+
+Wersja 0.15
+	Dodane inne sposoby określania numeracji w Label Numerówek.
+	Poprawka komunikatów zawierających współrzedne numerówek.
+	Poprawka komunikatu o zbyt dużej liczbie węzłów w drodze.
+	Poprawka komunikatu o przejściu drogi przez węzeł więcej niż raz.
+
+Wersja 0.14
+	Usunięty komunikat o niewłaściwej liczbie punktów w Numerówce.
+
+Wersja 0.13
+	Pierwsza przymiarka do definicji numerów liniami.
+	Poprawione generowanie dociąganych węzłów brzegowych.
+
+Wersja 0.12
+	Poprawiona obsługa paramteru RouteParam. Element OneWay zmieniany
+	na 1 gdy DirIndicator=1. Opcjonalne (gdy OverrideNullSpeed=1 w pliku
+	konfiguracyjnym) nadpisywanie klasy drogi i dopuszczalnej prędkości 
+	gdy ich wartości są zerowe.
+	Zmiana domyślnych parametrów dl  drogi typu 0x01 w netgen.cfg (Tomasz 
+	R. Surmacz).
+	Korekta treści komunikatów (Tomasz R. Surmacz).
+
+Wersja 0.11
+	Poprawione maskowanie ślepych końców i wiaduktów. Mozliwośc określenia
+	rozmiaru obszaru maskowanego.
+	Do komunikatu o przekroczonej dopuszczalnej liczbie węzłów drogi
+	dodany Label.
+
+Wersja 0.10
+	Do komunikatu o przechodzeniu drogi więcej niż raz przez węzeł
+	dodane współrzędne węzła.
+	Poprawiony błąd: parametr Label nie był kasowany na początku sekcji
+	[POLYGON]
+
+Wersja 0.9
+	Pełny zestaw domyślnych parametrów dróg odczytywanych z pliku 
+	konfiguracyjnego.
+	Poprawiony błąd odczytu współrzednych w sekcji [POI]	
+
+Wersja 0.8ts
+	Umożliwienie definiowania węzłów brzegowych za pomocą punktów linii
+	typu 0x4b. Uaktywniane opcją -B. (Tomasz R. Surmacz)
+	
+Wersja 0.8
+	Ostrzeganie o rozcinaniu pętli w drogach zawierajacych numerację 
+	budynków.
+	Rozbudowa oznaczeń rodzajów punktów generowanych w wyniku działania
+	opcji -c.
+	Przenoszenie parametru RestrParam z opisu linii do restrykcji.
+	Ustawianie parametru Routing=Y w nagłówku wynikowej mapy.	
+	Umożliwienie wykluczenia z listy punktów węzłów "regularnych" (-N)
+	Umożliwienie okreslania nazwy pliku wejściowego jako parameru wywołania
+	Umożliwienie określenia pliku wyjściowego przy pomocy 
+	parametru -o (Tomasz R. Surmacz)
+	Rozbudowanie informacji o rozcinanych pętlach (Tomasz R. Surmacz)
+
+Wersja 0.7rc1
+	Dodanie obłsugi gettext dla umożliwienia wykorzystania zewnętrznych
+	plików z komunikatami.
+
+Wersja 0.6
+	Mozliwośc oznaczania końców dróg
+	Możliwość jednoczesnego użycia opcji -c oraz -x 
+	Poprawione wyświetlanie błędów restrykcji i zliczanie ostrzeżeń.
+
+Wersja 0.5
+	Generowanie listy przecięć
+	Mozliwość oznaczania przecięć bezkolizyjnych
+
+Wersja 0.4
+	Odczyt tabeli parametrów dróg dla routingu z pliku konfiguracyjnego
+	Wyróznianianie węzłów krańcowych przy zapisie do pliku wpt
+	
+Wersja 0.3
+	Przeniesienie wykrywania wielokorotnych punktów przed numerowanie dróg
+	Generowanie węzłów dla punktów restrykcji.
+	Generowanie węzłów dla punktów wspólnych obiektu background i dróg
+	Opcjonalne generowanie węzłów na końcach dróg
+
+Wersja 0.2
+	Możliwośc ustalania precyzji przetworzonych współrzędnych.
+	Rozdziealnie linii zawierającyh wiele elementów "Data0". 
+	Rozdzielanie zapętlonych linii
+	Zachowywanie rodzaju znacznika początku i końca sekcji.
+	Mozliwośc wyboru między buforowaniem w pamięci i w pliku.
+	Odczyt punktów i zapis numerów dróg w tym samym przebiegu.
+	Eliminowanie RoadID oraz Nod z danych wejściowych.
+	Mozliwość zachowania pliku tymczasowego.
+	Mozliwość zmiany typu linii interpretowanej jako restrykcja.
+
+Wersja 0.1	
+	Pierwsza opublikowana wersja
