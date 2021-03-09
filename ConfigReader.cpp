@@ -222,6 +222,7 @@ bool ConfigReader::token (const string& tok, const string &val){
 	 }
       }
    }
+   return true;
 }
 
 

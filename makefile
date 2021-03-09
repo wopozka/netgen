@@ -4,7 +4,7 @@ CXXWIN = i586-mingw32msvc-g++
 # EXEEXT=.exe
 CXXLINK = $(CXX)
 # CXXFLAGS = -g -O2 -Wall --pedantic
-CXXFLAGS = -g -O2 -Wall 
+CXXFLAGS = -g -O2 -Wall -std=gnu++03
 # CXXFLAGS = -ggdb -Wall --pedantic
 netgen_LDFLAGS = -static
 netgen_EXTRA_SRC =makefile netgen.po
