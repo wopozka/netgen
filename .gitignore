@@ -1,2 +1,19 @@
-.idea
+# Compiled Object files
+*.slo
+*.lo
 *.o
+netgen
+netgen.exe
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# eclipse ignore
+.project
+.cproject

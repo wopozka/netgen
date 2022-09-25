@@ -58,6 +58,8 @@ class ConfigReader : public PFMStreamReader {
 		bool adjustClassesInNode;
 		bool createNodeForRestriction;
 		bool printRoadSigns;
+		bool nonRoutableBike;
+		bool nonRoutablePederestian;
 		int numbersType;
 		int restrictionType;
 		int roadSignType;
@@ -81,7 +83,7 @@ class ConfigReader : public PFMStreamReader {
                 int findRoadSign (const std::string& st);
                 std::string stRoadSign (int type);
 		void dumpParameters ();
-   
+		bool isRoutable (int type);
 };
 
 #endif

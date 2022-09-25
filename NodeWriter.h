@@ -35,50 +35,50 @@
 #define  HASHGRIDSIZE  2
 
 class NodeWriter {
-	private:
-		Roadmap     roads;  // numery węzłów i punktów dla drogi
-		Pointmap&   points; // id węzła i lista dróg dla punktu 
-		Nodemap&    nodes;  // współrzedne dla node_id
-		MapData&    mapData;
-                std::set<int64_t>    rSignHashes;
-                double rSignHashLatitudeBase;
-		std::string sectionBuf;
-		std::ostream& os;
-		std::string processRestriction (Polyline& pl, bool isRoadSign);
-		void processRoad (Polyline& pl);
-		int findRoad (Polyline& pl, PointParameters *na, PointParameters *nb);
-		int warningCounter;
-		int endNodeCounter;
-		int firstEndNodeID;
-		int restrictionCounter;
-		int bordernodeCounter;
-		ConfigReader& config;
-		StreetNum streetNum;
+private:
+	Roadmap     roads;  // numery węzłów i punktów dla drogi
+	Pointmap&   points; // id węzła i lista dróg dla punktu
+	Nodemap&    nodes;  // współrzedne dla node_id
+	MapData&    mapData;
+	std::set<int64_t>    rSignHashes;
+	double rSignHashLatitudeBase;
+	std::string sectionBuf;
+	std::ostream& os;
+	std::string processRestriction (Polyline& pl, bool isRoadSign);
+	void processRoad (Polyline& pl);
+	int findRoad (Polyline& pl, PointParameters *na, PointParameters *nb);
+	int warningCounter;
+	int endNodeCounter;
+	int firstEndNodeID;
+	int restrictionCounter;
+	int bordernodeCounter;
+	ConfigReader& config;
+	StreetNum streetNum;
 
-		void NumberingReport (int roadID, std::map<int,RoadParameters>& nodes);
-		void findAllowedClassesForAllNodes (std::list<int>& nodesToChange);
-		void findAllowedClassesForNodesOfRoads (std::list<int>& linesToCheck, 
-					  	        std::list<int>& nodesToChange);
-		void changeClassesOfLinesForNodes (std::list<int>& nodesToCheck, 
-						   std::list<int>& modifiedLines);
-		void copyTmpRouteToRoute ();
-		void copyRouteToTmpRoute ();
-		short setHighestRouteForNode (const NodemapIter& ni);
-		bool  setAverageRouteForNode (const NodemapIter& ni);
-                int64_t rSignHash(const Point& p);
-                bool rSignPlaceOccupied(const Point& p);
-                void addRSignHash(const Point& p);
-	public:
-		NodeWriter (std::ostream& ostr, 
-			    MapData& md,
-			    ConfigReader& cfg);
-		void process ();
-		int getFirstEndNodeID ();
-		void markNodesNearRoad (double radius);
-		void checkMinimumDistance (double epsilon);
-		void generateIncidenceMap ();
-		void outputIncidenceMap (std::ostream& os);
-		void outputMap ();
+	void NumberingReport (int roadID, std::map<int,RoadParameters>& nodes);
+	void findAllowedClassesForAllNodes (std::list<int>& nodesToChange);
+	void findAllowedClassesForNodesOfRoads (std::list<int>& linesToCheck,
+			std::list<int>& nodesToChange);
+	void changeClassesOfLinesForNodes (std::list<int>& nodesToCheck,
+			std::list<int>& modifiedLines);
+	void copyTmpRouteToRoute ();
+	void copyRouteToTmpRoute ();
+	short setHighestRouteForNode (const NodemapIter& ni);
+	bool  setAverageRouteForNode (const NodemapIter& ni);
+	int64_t rSignHash(const Point& p);
+	bool rSignPlaceOccupied(const Point& p);
+	void addRSignHash(const Point& p);
+public:
+	NodeWriter (std::ostream& ostr,
+			MapData& md,
+			ConfigReader& cfg);
+	void process ();
+	int getFirstEndNodeID ();
+	void markNodesNearRoad (double radius);
+	void checkMinimumDistance (double epsilon);
+	void generateIncidenceMap ();
+	void outputIncidenceMap (std::ostream& os);
+	void outputMap ();
 };
 
 #endif

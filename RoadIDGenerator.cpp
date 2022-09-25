@@ -44,7 +44,7 @@ RoadIDGenerator::RoadIDGenerator (istream& istr,
 // czy przeprowadzac rozbior Data0= dla poline. W zalozeniu
 // obiekty nie podlegajace obrobce netgenem (rzeczki itp) maja
 // i tak kopiowane co do znaku linie z danymi
-#define isWorthParsing(type) ((isRoutable (type) || (type)==TYPE_BACKGROUND || \
+#define isWorthParsing(type) ((config.isRoutable (type) || (type)==TYPE_BACKGROUND || \
           (type)==config.numbersType || config.isRestrictionOrRoadSign(type)))
 
 void RoadIDGenerator::startRoad (){
@@ -357,7 +357,7 @@ void RoadIDGenerator::section (const string& sec){
       }
 
       insidePolyline = false;
-      if (isRoutable(objectType) || (config.isRestrictionOrRoadSign(objectType))){
+      if (config.isRoutable(objectType) || (config.isRestrictionOrRoadSign(objectType))){
        	 list<Points>::iterator da = datalist.begin ();
        	 while (da != datalist.end()){
        	    int n1, n2;
@@ -428,7 +428,7 @@ bool RoadIDGenerator::token (const string& tok, const string& val){
    }
 
    // nie od razy wiadomo jaki jest typ !
-   if (!isPolyline || !(isRoutable(objectType) || (config.isRestrictionOrRoadSign(objectType))) || !recognized){
+   if (!isPolyline || !(config.isRoutable(objectType) || (config.isRestrictionOrRoadSign(objectType))) || !recognized){
       sectionBuf += tok + "=" + val + "\n";
    }
 
@@ -486,7 +486,7 @@ bool RoadIDGenerator::token (const string& tok, const string& val){
 	    }
 	 }
 #ifdef CREATE_LIST_OF_LINES
-	 if (isRoutable (objectType)){
+	 if (config.isRoutable (objectType)){
 	    Point previousPoint; 
 	    istringstream iv (val);
 	    checkMinAngle(NULL); // initialize (clear previous slope)
@@ -508,7 +508,6 @@ bool RoadIDGenerator::token (const string& tok, const string& val){
 #endif	 
       }            
    }
-   return true;
 }
 
 void RoadIDGenerator::comment (const string& line){

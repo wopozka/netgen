@@ -56,7 +56,6 @@ bool StreetNum::streetNumOverlaps (HouseNumbers& hn){
 	 return true;
       }
    }
-   return true;
 }
 
 char StreetNum::numbersType (int begin, int end){

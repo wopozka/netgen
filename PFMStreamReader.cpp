@@ -282,5 +282,5 @@ bool PFMStreamReader::token (const string& token, const string& value){
          numbersFound = true;
       }
    }
-   return true;
+   return false;
 }

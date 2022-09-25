@@ -38,7 +38,7 @@ inline double rad2deg(double rad) {
 
 class Point {
 	public:
-		static const double INVALID = 400;
+		static constexpr double INVALID = 400;
 
 		double x;
 		double y;

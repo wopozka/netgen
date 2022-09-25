@@ -30,7 +30,7 @@ char bufor[FGETS_BUFFER];
 
 void TextStreamReader::process (){
    while (true){
-       if (is!=cin) {
+       if (&is != &cin) {
           if (!getline (is, linebuf))
               break;
        } else {
