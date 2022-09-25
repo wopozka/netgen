@@ -27,8 +27,8 @@
 
 class NetAnalyzer {
 	private:
-		ConfigReader& config;
 		MapData&      mapData;
+		ConfigReader& config;
 		Nodemap& nodes; // współrzedne dla node_id
 
 		bool checkEndNode (short route, Point& startPoint, int roadID, int nodeID);

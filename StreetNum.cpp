@@ -56,6 +56,8 @@ bool StreetNum::streetNumOverlaps (HouseNumbers& hn){
 	 return true;
       }
    }
+   // do ustalenia czy ma tu zwracać true czy false, ale chyba false
+   return false;
 }
 
 char StreetNum::numbersType (int begin, int end){

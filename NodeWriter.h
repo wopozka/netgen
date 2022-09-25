@@ -39,11 +39,11 @@ private:
 	Roadmap     roads;  // numery węzłów i punktów dla drogi
 	Pointmap&   points; // id węzła i lista dróg dla punktu
 	Nodemap&    nodes;  // współrzedne dla node_id
+	std::ostream& os;
 	MapData&    mapData;
 	std::set<int64_t>    rSignHashes;
 	double rSignHashLatitudeBase;
 	std::string sectionBuf;
-	std::ostream& os;
 	std::string processRestriction (Polyline& pl, bool isRoadSign);
 	void processRoad (Polyline& pl);
 	int findRoad (Polyline& pl, PointParameters *na, PointParameters *nb);

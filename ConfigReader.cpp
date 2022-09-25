@@ -225,6 +225,8 @@ bool ConfigReader::token (const string& tok, const string &val){
 			}
 		}
 	}
+	// do ustalenia czy ma zwracac true czy false
+	return true;
 }
 
 

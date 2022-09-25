@@ -508,6 +508,8 @@ bool RoadIDGenerator::token (const string& tok, const string& val){
 #endif	 
       }            
    }
+   // do ustalenia czy tu powinno zwracac true czy false
+   return true;
 }
 
 void RoadIDGenerator::comment (const string& line){
