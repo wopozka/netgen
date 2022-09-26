@@ -599,7 +599,7 @@ string NodeWriter::processRestriction (Polyline& pl, bool isRoadSign){
 		}
 
 
-		double distance=restPoints[0]->metDistance (*restPoints[3]);
+		// double distance=restPoints[0]->metDistance (*restPoints[3]);
 		int rtype = -1;
 		Point rp ;  //pkt restrykcji
 		double rangle;
@@ -834,7 +834,8 @@ void NodeWriter::NumberingReport (int roadID, map<int,RoadParameters>& nodes){
 void NodeWriter::processRoad (Polyline& pl){
 
 	int  nodCounter = 1;
-	bool nodeFound = false;
+	// zbedna zmienna?
+	// bool nodeFound = false;
 	set<NodeID> node_ids;
 	Roadmap::iterator pb = roads.lower_bound (pl.roadID);
 	Roadmap::iterator pe = roads.upper_bound (pl.roadID);
@@ -866,7 +867,8 @@ void NodeWriter::processRoad (Polyline& pl){
 			cerr << _("more than once.\n");
 			warningCounter++;
 		}
-		nodeFound = true;
+		// zbedna zmienna?
+		// nodeFound = true;
 		pb++;
 	}
 
@@ -973,9 +975,11 @@ void NodeWriter::findAllowedClassesForNodesOfRoads (list<int>& linesToCheck, lis
 		Roadmap::iterator pe = roads.upper_bound (*li);
 		while (pb != pe){
 			NodemapIter ni = nodes.find(pb->second.node);
-			short highestRoute = -1;
+			// zbedna zmienna?
+			// short highestRoute = -1;
 			if (ni != nodes.end()){
-				highestRoute = setHighestRouteForNode (ni);
+				// zbedna zmienna?
+				// highestRoute = setHighestRouteForNode (ni);
 				bool moreThanTwoRoutesFound = setAverageRouteForNode (ni);
 				if (moreThanTwoRoutesFound){
 					nodesToChange.push_back(pb->second.node);

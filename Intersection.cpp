@@ -148,7 +148,7 @@ EventPoint::EventPoint(LineSegment &s, int t, LineSegIter idx)
         p = *(s.k);
 }
 EventPoint::EventPoint(const Point& cp, LineSegIter idx, LineSegIter idx2)
-                :p(cp),segIdx(idx),intSegIdx(idx2),type(INTERSECTION_EVENT){
+                :p(cp),type(INTERSECTION_EVENT),segIdx(idx),intSegIdx(idx2){
 }
 
 
@@ -417,7 +417,8 @@ void Intersection::moveSweepLine(double newSL){
     }
 
     // zmien sweep na nowy
-    double preSweep = LSIterComparator::sweep;
+    // zbedna zmienna?
+    // double preSweep = LSIterComparator::sweep;
     LSIterComparator::sweep = newSL;
     // dodaj wszystkie usuniete
     FORALL(pomyslne,swIt){
@@ -464,7 +465,8 @@ void Intersection::moveSweepLine(double newSL){
             bsit = sit = sweepLine.lower_bound(dumbVector.begin());
             while(bsit!=sweepLine.begin()){
                 bsit--;
-                double hgh = LSIterComparator::heigh(*bsit);
+                // zbedna zmienna?
+                // double hgh = LSIterComparator::heigh(*bsit);
                 if (findImproved(**bsit, **wrIt,&p)){
                     int64_t index = iteratorHasher(*bsit, *wrIt, segmenty.size());
                     if (existingInt.insert(index).second){
@@ -475,7 +477,8 @@ void Intersection::moveSweepLine(double newSL){
                     break;
             }
             for(bsit=sit;bsit!=sweepLine.end(); bsit++){
-                double hgh = LSIterComparator::heigh(*bsit);
+                // zbedna zmienna?
+                // double hgh = LSIterComparator::heigh(*bsit);
                 if (findImproved(**bsit, **wrIt,&p)){
                     int64_t index = iteratorHasher(*bsit, *wrIt, segmenty.size());
                     if (existingInt.insert(index).second){

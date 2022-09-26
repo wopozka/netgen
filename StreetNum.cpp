@@ -48,7 +48,8 @@ void StreetNum::description (PolylineListIter pl, ostream& os){
 }
 
 bool StreetNum::streetNumOverlaps (HouseNumbers& hn){
-   bool overlaps = false;
+   // zbedna zmienna?
+   // bool overlaps = false;
    list<HouseNumbers>::iterator hni;
    for (hni = numberList.begin(); hni != numberList.end(); hni++){
       if (!(((hni->startPoint < hn.startPoint) && (hni->endPoint <= hn.startPoint)) || 

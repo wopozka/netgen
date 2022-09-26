@@ -51,9 +51,8 @@ class RoadIDGenerator : public PFMStreamReader {
 		void outputSegment (PointsIter& pn, int segmentSize);
 		bool findNode (Points& pts, int &n1, int &n2);
 		int half (int m, int n);
-		ConfigReader& config;
-
 		MapData *mapData;
+		ConfigReader& config;
 
 		void comment    (const std::string& line);
 		void section    (const std::string& sec);

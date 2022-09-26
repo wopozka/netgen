@@ -71,10 +71,11 @@ typedef std::set<LineSegIter, LSIterComparator> SweepLineSet;
 #define RIGHT_EVENT 2
 #define INTERSECTION_EVENT 1
 #define LEFT_EVENT 0
+// warto by to chyba przepisac na klase, funkcje w strukturze to slaby pomysl
 struct EventPoint{
     Point p;
-    LineSegIter segIdx;
     int type;
+    LineSegIter segIdx;
     LineSegIter intSegIdx; // intersecting segment
     EventPoint(LineSegment &s, int t, LineSegIter idx);
     EventPoint(const Point& cp, LineSegIter idx, LineSegIter idx2);

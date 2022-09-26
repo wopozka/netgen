@@ -37,10 +37,10 @@
 class NodeWriter {
 private:
 	Roadmap     roads;  // numery węzłów i punktów dla drogi
-	Pointmap&   points; // id węzła i lista dróg dla punktu
-	Nodemap&    nodes;  // współrzedne dla node_id
 	std::ostream& os;
 	MapData&    mapData;
+	Pointmap&   points; // id węzła i lista dróg dla punktu
+	Nodemap&    nodes;  // współrzedne dla node_id
 	std::set<int64_t>    rSignHashes;
 	double rSignHashLatitudeBase;
 	std::string sectionBuf;
