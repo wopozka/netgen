@@ -5,7 +5,7 @@ CXXWIN = g++
 # EXEEXT=.exe
 CXXLINK = $(CXX)
 # CXXFLAGS = -g -O2 -Wall --pedantic
-CXXFLAGS = -g -O0 -Wall -std=gnu++11
+CXXFLAGS = -g -O2 -Wall -std=gnu++11
 #CXXFLAGS = -g -O0 -Wall -fpermissive
 netgen_LDFLAGS = -static
 netgen_EXTRA_SRC =makefile netgen.po
